@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Spell" load_steps=3 format=3 uid="uid://jk7cdj0qbne1"]
 
 [ext_resource type="Script" path="res://Resource/Base Resources/Spell.gd" id="1_1jk2w"]
-[ext_resource type="PackedScene" uid="uid://m3rirodqoyyu" path="res://Resource/Attacks/Waterjolt.tscn" id="1_kdcj8"]
+[ext_resource type="PackedScene" uid="uid://m3rirodqoyyu" path="res://Scenes/Waterjolt.tscn" id="1_kdcj8"]
 
 [resource]
 script = ExtResource("1_1jk2w")

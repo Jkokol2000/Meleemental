@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://bwdn35x8h2dnd"]
 
-[ext_resource type="Script" path="res://Fireball.gd" id="1_674tq"]
-[ext_resource type="Resource" uid="uid://ctavarpmsghtv" path="res://Resource/Attacks/Fireball.tres" id="2_2rjma"]
+[ext_resource type="Script" path="res://Scripts/Fireball.gd" id="1_3nshw"]
+[ext_resource type="Resource" uid="uid://ctavarpmsghtv" path="res://Resource/Attacks/Fireball.tres" id="2_wwc08"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_81qcl"]
 radius = 103.044
 
 [node name="Fireball" type="Area2D"]
-script = ExtResource("1_674tq")
-attack = ExtResource("2_2rjma")
+script = ExtResource("1_3nshw")
+attack = ExtResource("2_wwc08")
 
 [node name="FireballShape" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_81qcl")

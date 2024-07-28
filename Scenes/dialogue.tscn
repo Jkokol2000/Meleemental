@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bj0y8xowcr1tp"]
 
-[ext_resource type="Script" path="res://Dialogue.gd" id="1_ajj6j"]
-[ext_resource type="Texture2D" uid="uid://di25f6gu3pp4u" path="res://Sprites/dialogue_backgroung.png" id="2_y3n1i"]
-[ext_resource type="FontFile" uid="uid://df10gd5et1qgx" path="res://Sprites/Roboto-Black.ttf" id="3_5uygm"]
-[ext_resource type="Script" path="res://PauseCalculator.gd" id="4_ydejd"]
+[ext_resource type="Script" path="res://Scripts/Dialogue.gd" id="1_qq2tq"]
+[ext_resource type="Texture2D" uid="uid://di25f6gu3pp4u" path="res://Sprites/dialogue_backgroung.png" id="2_bfvhn"]
+[ext_resource type="FontFile" uid="uid://df10gd5et1qgx" path="res://Sprites/Roboto-Black.ttf" id="3_swyoy"]
+[ext_resource type="Script" path="res://Scripts/PauseCalculator.gd" id="4_dromt"]
 
 [node name="Dialogue" type="Control"]
 process_mode = 3
@@ -15,14 +15,14 @@ offset_right = -354.0
 offset_bottom = -499.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ajj6j")
+script = ExtResource("1_qq2tq")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 texture_filter = 1
 layout_mode = 0
 offset_right = 789.0
 offset_bottom = 149.0
-texture = ExtResource("2_y3n1i")
+texture = ExtResource("2_bfvhn")
 region_rect = Rect2(5, 5, 2, 2)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
@@ -32,7 +32,7 @@ offset_top = 8.0
 offset_right = 781.0
 offset_bottom = 136.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_5uygm")
+theme_override_fonts/normal_font = ExtResource("3_swyoy")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 
@@ -42,7 +42,7 @@ wait_time = 0.04
 [node name="Pause_Timer" type="Timer" parent="."]
 
 [node name="PauseCalculator" type="Node" parent="."]
-script = ExtResource("4_ydejd")
+script = ExtResource("4_dromt")
 
 [connection signal="timeout" from="Type_Timer" to="." method="_on_type_timer_timeout"]
 [connection signal="timeout" from="Pause_Timer" to="." method="_on_pause_timer_timeout"]

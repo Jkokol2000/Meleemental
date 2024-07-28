@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 InputBuffer="*res://Scripts/input_buffer.gd"
-HitstopManager="*res://hitstop_manager.gd"
+HitstopManager="*res://Scripts/hitstop_manager.gd"
 
 [display]
 

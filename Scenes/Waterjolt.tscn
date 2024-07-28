@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://m3rirodqoyyu"]
 
-[ext_resource type="Script" path="res://Waterjolt.gd" id="1_b1dej"]
+[ext_resource type="Script" path="res://Scripts/Waterjolt.gd" id="1_b1dej"]
 [ext_resource type="Texture2D" uid="uid://c7o6idvnebt2n" path="res://Addons/buff_er/example/character.svg" id="1_ua6qn"]
 [ext_resource type="Resource" uid="uid://bco6jbbnwoql7" path="res://Resource/Attacks/Waterjolt.tres" id="2_owahg"]
 

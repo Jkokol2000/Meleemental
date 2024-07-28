@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bhbopgobj4tvy"]
 
-[ext_resource type="Script" path="res://Scenes/HitboxComponent.gd" id="1_r4rsu"]
+[ext_resource type="Script" path="res://Scripts/HitboxComponent.gd" id="1_r4rsu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ac5j3"]
 size = Vector2(128, 126)
