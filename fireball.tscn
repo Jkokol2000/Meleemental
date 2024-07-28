@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwdn35x8h2dnd"]
+
+[ext_resource type="Script" path="res://Fireball.gd" id="1_674tq"]
+[ext_resource type="Resource" uid="uid://ctavarpmsghtv" path="res://Resource/Attacks/Fireball.tres" id="2_2rjma"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_81qcl"]
+radius = 103.044
+
+[node name="Fireball" type="Area2D"]
+script = ExtResource("1_674tq")
+attack = ExtResource("2_2rjma")
+
+[node name="FireballShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_81qcl")
+
+[node name="UpTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+autostart = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="OffscreenTimer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="DamageTimer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="timeout" from="UpTimer" to="." method="_on_up_timer_timeout"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="timeout" from="OffscreenTimer" to="." method="_on_offscreen_timer_timeout"]
+[connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]

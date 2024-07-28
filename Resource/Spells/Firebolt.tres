@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=3 format=3 uid="uid://c35u0wln5ky0j"]
+
+[ext_resource type="PackedScene" uid="uid://bft0pssnffial" path="res://firebolt.tscn" id="1_ddesb"]
+[ext_resource type="Script" path="res://Resource/Base Resources/Spell.gd" id="1_x88lm"]
+
+[resource]
+script = ExtResource("1_x88lm")
+name = "Firebolt"
+formula = [["Fire", "None"], ["None", "Fire"]]
+scene = ExtResource("1_ddesb")

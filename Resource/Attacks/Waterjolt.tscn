@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://m3rirodqoyyu"]
+
+[ext_resource type="Script" path="res://Waterjolt.gd" id="1_b1dej"]
+[ext_resource type="Texture2D" uid="uid://c7o6idvnebt2n" path="res://Addons/buff_er/example/character.svg" id="1_ua6qn"]
+[ext_resource type="Resource" uid="uid://bco6jbbnwoql7" path="res://Resource/Attacks/Waterjolt.tres" id="2_owahg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o6pd8"]
+height = 504.0
+
+[node name="Node2D" type="Area2D"]
+script = ExtResource("1_b1dej")
+attack = ExtResource("2_owahg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(250, 0)
+scale = Vector2(3.92969, 0.195313)
+texture = ExtResource("1_ua6qn")
+
+[node name="Waterjolt_Shape" type="CollisionShape2D" parent="."]
+position = Vector2(250, -1)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_o6pd8")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=2 format=3 uid="uid://ctavarpmsghtv"]
+
+[ext_resource type="Script" path="res://Resource/Base Resources/Attack.gd" id="1_dmje1"]
+
+[resource]
+script = ExtResource("1_dmje1")
+attack_damage = 20
+knockback = Vector2(0, -200)
+self_knockback = Vector2(0, 0)
+element = "None"
