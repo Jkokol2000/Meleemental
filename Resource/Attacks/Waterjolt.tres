@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_nunnu")
-attack_damage = 10
-knockback = Vector2(500, 0)
+attack_damage = 50
+knockback = Vector2(50, 0)
 self_knockback = Vector2(0, 0)
 element = "None"

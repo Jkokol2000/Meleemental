@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=3 format=3 uid="uid://d38h6g6bjrcdu"]
+
+[ext_resource type="PackedScene" uid="uid://quto5r2t1ldo" path="res://WaterBubble.tscn" id="1_hckmg"]
+[ext_resource type="Script" path="res://Resource/Base Resources/Spell.gd" id="1_xgwa7"]
+
+[resource]
+script = ExtResource("1_xgwa7")
+name = "Waterbubble"
+formula = [["Water", "Water"]]
+scene = ExtResource("1_hckmg")

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxhcsf14w5uv6"]
+
+[ext_resource type="Script" path="res://Scripts/Waterjolt.gd" id="1_vk6et"]
+[ext_resource type="Resource" uid="uid://bmwslysrtyyla" path="res://Resource/Attacks/Windgust.tres" id="2_jwr4e"]
+[ext_resource type="Texture2D" uid="uid://c7o6idvnebt2n" path="res://Addons/buff_er/example/character.svg" id="3_nu5qs"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o6pd8"]
+height = 504.0
+
+[node name="Node2D" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_vk6et")
+attack = ExtResource("2_jwr4e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 240)
+scale = Vector2(0.148438, 3.93359)
+texture = ExtResource("3_nu5qs")
+
+[node name="Windgust_Shape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 240)
+shape = SubResource("CapsuleShape2D_o6pd8")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bft0pssnffial"]
 
-[ext_resource type="Script" path="res://Scenes/firebolt.gd" id="1_gpq5j"]
+[ext_resource type="Script" path="res://Scenes/firebolt.gd" id="1_6gdce"]
 [ext_resource type="Resource" uid="uid://dnqq8d55siaui" path="res://Resource/Attacks/Firebolt.tres" id="2_beo2n"]
 [ext_resource type="Texture2D" uid="uid://e3jfsafk2lba" path="res://icon.svg" id="3_fsxia"]
 
@@ -8,7 +8,9 @@
 size = Vector2(14, 13.5)
 
 [node name="Firebolt" type="Area2D"]
-script = ExtResource("1_gpq5j")
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_6gdce")
 attack = ExtResource("2_beo2n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -21,4 +23,10 @@ texture = ExtResource("3_fsxia")
 position = Vector2(0, 0.25)
 shape = SubResource("RectangleShape2D_msco0")
 
+[node name="Lifetime" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

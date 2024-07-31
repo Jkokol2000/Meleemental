@@ -36,3 +36,7 @@ func on_child_transition(state, new_state_name):
 		current_state.Exit()
 	new_state.Enter()
 	current_state = new_state
+
+
+func _on_hitbox_component_took_damage():
+	current_state.Transitioned.emit(current_state, "hurt")

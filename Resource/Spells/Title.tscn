@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://1n1xlj5100xk"]
+
+[ext_resource type="Texture2D" uid="uid://bhp6ihpow8ult" path="res://Resource/Attacks/Title.png" id="1_6bko0"]
+[ext_resource type="Script" path="res://Resource/Spells/Title.gd" id="1_s0gvb"]
+[ext_resource type="AudioStream" uid="uid://bsxqdoeda6axj" path="res://Sprites/Player Ground Attack 2 Anim/metal song Edit 1 Export 1.mp3" id="3_6eh0b"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s0gvb")
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(957.5, 539.5)
+scale = Vector2(2.00312, 2.00556)
+texture = ExtResource("1_6bko0")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 633.0
+offset_top = 757.0
+offset_right = 1013.0
+offset_bottom = 812.0
+theme_override_font_sizes/font_size = 40
+text = "Press Space to Start"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6eh0b")
+volume_db = -10.0
+autoplay = true

@@ -5,6 +5,7 @@ signal Transitioned
 
 @export var can_jump : bool = false
 @export var can_dash : bool = false
+@export var can_turn : bool = false
 
 @onready var Parent = get_parent().parent
 @onready var Movement_Component = Parent.movement_component

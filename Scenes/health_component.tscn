@@ -1,13 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjjwdhjgixqls"]
+[gd_scene load_steps=2 format=3 uid="uid://cjjwdhjgixqls"]
 
-[ext_resource type="Script" path="res://Scripts/HealthComponent.gd" id="1_shann"]
+[ext_resource type="Script" path="res://Scenes/hitbox_component.gd" id="1_yt0ka"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ac5j3"]
-size = Vector2(128, 126)
-
-[node name="HealthComponent" type="Area2D"]
-script = ExtResource("1_shann")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_ac5j3")
+[node name="HitboxComponent" type="Area2D"]
+script = ExtResource("1_yt0ka")

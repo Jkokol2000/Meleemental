@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=2 format=3 uid="uid://c04yqms43r0qy"]
+
+[ext_resource type="Script" path="res://Resource/Base Resources/Spell.gd" id="2_l3qwv"]
+
+[resource]
+script = ExtResource("2_l3qwv")
+name = "Windgust"
+formula = [["Wind", "None"], ["None", "Wind"]]

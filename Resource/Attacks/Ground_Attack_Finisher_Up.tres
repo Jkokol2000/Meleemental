@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_gmbm5")
-attack_damage = 30
-knockback = Vector2(0, 1000)
-self_knockback = Vector2(0, 0)
-element = "Water"
+attack_damage = 6
+knockback = Vector2(0, -1500)
+self_knockback = Vector2(0, -250)
+element = "Wind"

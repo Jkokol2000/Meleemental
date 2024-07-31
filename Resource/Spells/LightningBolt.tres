@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=3 format=3 uid="uid://cxktw2e616erq"]
+
+[ext_resource type="Script" path="res://Resource/Base Resources/Spell.gd" id="1_t64tu"]
+[ext_resource type="PackedScene" uid="uid://u7sp1s276t0o" path="res://Scenes/LightningBolt.tscn" id="1_yfxp7"]
+
+[resource]
+script = ExtResource("1_t64tu")
+name = "LightningBolt"
+formula = [["Fire", "Wind"], ["Wind", "Fire"]]
+scene = ExtResource("1_yfxp7")

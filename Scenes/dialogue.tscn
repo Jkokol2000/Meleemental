@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Dialogue.gd" id="1_qq2tq"]
 [ext_resource type="Texture2D" uid="uid://di25f6gu3pp4u" path="res://Sprites/dialogue_backgroung.png" id="2_bfvhn"]
 [ext_resource type="FontFile" uid="uid://df10gd5et1qgx" path="res://Sprites/Roboto-Black.ttf" id="3_swyoy"]
-[ext_resource type="Script" path="res://Scripts/PauseCalculator.gd" id="4_dromt"]
+[ext_resource type="Script" path="res://Scripts/PauseCalculator.gd" id="4_pt1qv"]
 
 [node name="Dialogue" type="Control"]
 process_mode = 3
@@ -42,7 +42,7 @@ wait_time = 0.04
 [node name="Pause_Timer" type="Timer" parent="."]
 
 [node name="PauseCalculator" type="Node" parent="."]
-script = ExtResource("4_dromt")
+script = ExtResource("4_pt1qv")
 
 [connection signal="timeout" from="Type_Timer" to="." method="_on_type_timer_timeout"]
 [connection signal="timeout" from="Pause_Timer" to="." method="_on_pause_timer_timeout"]

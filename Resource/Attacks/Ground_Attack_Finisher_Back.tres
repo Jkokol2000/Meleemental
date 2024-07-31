@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=2 format=3 uid="uid://dxy84vv6rtqip"]
+
+[ext_resource type="Script" path="res://Resource/Base Resources/Attack.gd" id="1_a6652"]
+
+[resource]
+script = ExtResource("1_a6652")
+attack_damage = 30
+knockback = Vector2(800, -800)
+self_knockback = Vector2(-200, 0)
+element = "Water"

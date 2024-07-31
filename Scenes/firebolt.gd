@@ -30,15 +30,18 @@ func _physics_process(delta):
 	velocity = velocity.limit_length(speed)
 	rotation = velocity.angle()
 	position += velocity * delta
-
-func _on_Lifetime_timeout():
-	explode()
+	
 
 func explode():
 	queue_free()
 
 
 func _on_area_entered(area):
+	print(area.has_method("damage"))
 	if area.has_method("damage") and area.get_parent().is_in_group("Enemy"):
 		area.damage(attack)
 		explode()
+
+
+func _on_lifetime_timeout():
+	explode()

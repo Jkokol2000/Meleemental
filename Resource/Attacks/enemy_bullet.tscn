@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfs2wut4vctqb"]
+
+[ext_resource type="Script" path="res://Enemy_Bullet.gd" id="1_8jtn2"]
+[ext_resource type="Resource" uid="uid://dam4tgb6dy7g4" path="res://Resource/Attacks/Basic_Bullet.tres" id="2_xhy3i"]
+[ext_resource type="Texture2D" uid="uid://e3jfsafk2lba" path="res://icon.svg" id="3_7cosc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngpln"]
+
+[node name="Enemy_Bullet" type="Area2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_8jtn2")
+attack = ExtResource("2_xhy3i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.90735e-06, 1.90735e-06)
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("3_7cosc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ngpln")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

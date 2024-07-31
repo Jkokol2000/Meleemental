@@ -1,7 +1,7 @@
 extends Control
 class_name DialogueManager
 
-const DIALOGUE_SCENE := preload("res://dialogue.tscn")
+const DIALOGUE_SCENE := preload("res://Scenes/dialogue.tscn")
 
 signal message_requested()
 signal message_completed()
@@ -24,7 +24,10 @@ func show_messages(message_list: Array, position: Vector2):
 	var _dialogue = DIALOGUE_SCENE.instantiate()
 	get_tree().get_root().add_child(_dialogue)
 	
+	_dialogue.global_position = position
+	
 	cur_dialogue_instance = _dialogue
+	
 	
 	_show_current()
 
@@ -40,6 +43,7 @@ func _input(event):
 			_show_current()
 		else:
 			_hide()
+			queue_free()
 func _hide():
 	cur_dialogue_instance.queue_free()
 	cur_dialogue_instance = null

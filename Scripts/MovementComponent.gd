@@ -15,6 +15,11 @@ func _process(delta):
 		get_parent().is_on_floor(),
 		delta,
 	)
+	if get_movement_direction() and $"../State Machine".current_state.can_turn == true:
+		if get_movement_direction() == 1:
+			get_parent().sprites.flip_h = false
+		elif get_movement_direction() == -1:
+			get_parent().sprites.flip_h = true
 
 func get_movement_direction():
 	return Input.get_axis("move_left", "move_right")

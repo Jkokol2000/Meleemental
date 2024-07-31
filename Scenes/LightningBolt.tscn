@@ -1,0 +1,95 @@
+[gd_scene load_steps=19 format=3 uid="uid://u7sp1s276t0o"]
+
+[ext_resource type="Script" path="res://Scripts/Waterjolt.gd" id="1_8mhen"]
+[ext_resource type="Resource" uid="uid://bco6jbbnwoql7" path="res://Resource/Attacks/Waterjolt.tres" id="2_dy6ml"]
+[ext_resource type="Texture2D" uid="uid://dt0uw577arp24" path="res://Sprites/Spells/LightingBolt/frame_00_delay-0.08s.png" id="3_xjo3o"]
+[ext_resource type="Texture2D" uid="uid://d15pi68q6yhx0" path="res://Sprites/Spells/LightingBolt/frame_01_delay-0.08s.png" id="4_m8gpu"]
+[ext_resource type="Texture2D" uid="uid://dvxtrnxangfmn" path="res://Sprites/Spells/LightingBolt/frame_02_delay-0.08s.png" id="5_osleb"]
+[ext_resource type="Texture2D" uid="uid://ceab0si6ulr5b" path="res://Sprites/Spells/LightingBolt/frame_03_delay-0.08s.png" id="6_u8k0k"]
+[ext_resource type="Texture2D" uid="uid://chw8dydehkc2u" path="res://Sprites/Spells/LightingBolt/frame_04_delay-0.08s.png" id="7_2y22e"]
+[ext_resource type="Texture2D" uid="uid://shkv3xkcdntw" path="res://Sprites/Spells/LightingBolt/frame_05_delay-0.08s.png" id="8_llt2j"]
+[ext_resource type="Texture2D" uid="uid://lemfspev3bgp" path="res://Sprites/Spells/LightingBolt/frame_06_delay-0.08s.png" id="9_6tlcd"]
+[ext_resource type="Texture2D" uid="uid://b3ro0knaogae1" path="res://Sprites/Spells/LightingBolt/frame_07_delay-0.08s.png" id="10_8ekk3"]
+[ext_resource type="Texture2D" uid="uid://dg1gxclnun2i8" path="res://Sprites/Spells/LightingBolt/frame_08_delay-0.08s.png" id="11_gn6op"]
+[ext_resource type="Texture2D" uid="uid://bqhwphi2ergjl" path="res://Sprites/Spells/LightingBolt/frame_09_delay-0.08s.png" id="12_hot4d"]
+[ext_resource type="Texture2D" uid="uid://do5t4ci52cvvq" path="res://Sprites/Spells/LightingBolt/frame_10_delay-0.08s.png" id="13_j0fn3"]
+[ext_resource type="Texture2D" uid="uid://c8ee3tv5q554g" path="res://Sprites/Spells/LightingBolt/frame_11_delay-0.08s.png" id="14_fxvqc"]
+[ext_resource type="Texture2D" uid="uid://dsaweoluivrbo" path="res://Sprites/Spells/LightingBolt/frame_12_delay-0.08s.png" id="15_novdu"]
+[ext_resource type="Texture2D" uid="uid://c2ykt7ihu0nwy" path="res://Sprites/Spells/LightingBolt/frame_13_delay-0.08s.png" id="16_qyvyi"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o6pd8"]
+radius = 31.0
+height = 504.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_12n0f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xjo3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_m8gpu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_osleb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_u8k0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2y22e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_llt2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6tlcd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8ekk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gn6op")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_hot4d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_j0fn3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_fxvqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_novdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_qyvyi")
+}],
+"loop": false,
+"name": &"Bolt",
+"speed": 15.0
+}]
+
+[node name="Node2D" type="Area2D"]
+rotation = -1.5708
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_8mhen")
+attack = ExtResource("2_dy6ml")
+
+[node name="Waterjolt_Shape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 240)
+shape = SubResource("CapsuleShape2D_o6pd8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.00001, 241)
+rotation = 1.5708
+scale = Vector2(1.06797, 0.380826)
+sprite_frames = SubResource("SpriteFrames_12n0f")
+animation = &"Bolt"
+frame = 13
+frame_progress = 1.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

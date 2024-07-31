@@ -3,15 +3,16 @@ extends CollisionShape2D
 var current_flip_value
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	position = Vector2(20,12)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if $"../../PlayerAnim".flip_h:
+		position = Vector2(-240,12)
+	else:
+		position = Vector2(20,12)
 
 
 func _on_player_anim_sprite_flipped(value):
-	if current_flip_value != value:
-		position.x *= -1
-		current_flip_value = value
+	pass
